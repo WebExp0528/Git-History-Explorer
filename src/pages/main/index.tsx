@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { GitAuthor, GitCommit, GitCommitter } from './type';
-import { Container, Row, Spinner, Table, Alert } from 'react-bootstrap';
+import { GitCommit } from './type';
+import { Container, Row, Spinner, Alert } from 'react-bootstrap';
 import Header from './components/header';
 import HistoryTable from './components/historyTable';
 
@@ -27,7 +27,7 @@ const Main = (props: MainPageProps) => {
     setError(undefined);
     setLoading(true);
     Axios.get(
-      'https://api.github.com/repos/jacobsmoli/Git-History-Explorer/commits'
+      'https://api.github.com/repos/webexp0528/Git-History-Explorer/commits'
     )
       .then(({ data }) => {
         // setLoading(false);

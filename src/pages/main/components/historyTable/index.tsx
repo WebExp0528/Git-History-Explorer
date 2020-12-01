@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Row, Spinner, Table, Alert } from 'react-bootstrap';
+import { Row, Table, Alert } from 'react-bootstrap';
 
-import { GitAuthor, GitCommit, GitCommitter } from './../../type';
+import { GitCommit } from './../../type';
 
 import cls from './history-table.module.scss';
 
@@ -14,7 +14,7 @@ const columns = ['email', 'name', 'date'];
 const HistoryTable = (props: HistoryTableProps) => {
   const { data: tableData } = props;
   console.log('~``` data', tableData);
-  if (!tableData || tableData.length == 0) {
+  if (!tableData || tableData.length === 0) {
     return (
       <Row className={cls.noDataWrapper}>
         <Alert variant='danger'>Could not found history</Alert>
